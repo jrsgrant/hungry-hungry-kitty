@@ -7,6 +7,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 let myEnemy: Sprite = null
 let mySprite: Sprite = null
+music.playMelody("C5 B A G E F A C5 ", 120)
+mySprite.say("I've got to get away from the hungry kitty!", 5000)
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -222,6 +224,63 @@ myEnemy = sprites.create(img`
     f f . f f . f f 1 1 1 1 1 1 f . 
     f f . f f . f f f f 1 1 f f f f 
     `, SpriteKind.Enemy)
+animation.runImageAnimation(
+myEnemy,
+[img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . f . . . . . . f . 
+    . . . . . . . f f . . . . f f . 
+    . . . . . . . f f f f f f f f . 
+    . f f . . . . f f f f f f f f . 
+    . . f . . . . 1 f 1 f f 1 f 1 . 
+    . . f . . . . 1 1 1 f f 1 1 1 . 
+    f f f . . . . f f f 3 3 f f f . 
+    f f f . . . . f f f 3 3 f f f . 
+    f . . . . . . . f f f f f f . . 
+    f f f f f f f 1 1 1 1 1 1 1 1 . 
+    f f f f f f f 1 1 1 1 1 1 1 1 . 
+    f f f f f f f 1 1 1 1 1 1 1 1 . 
+    f f . f f . f f 1 1 1 1 1 1 f . 
+    f f . f f . f f f f 1 1 f f f f 
+    `,img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . f . . . . . . f . 
+    . . . . . . . f f . . . . f f . 
+    . . . . . . . f f f f f f f f . 
+    . f f . . . . f f f f f f f f . 
+    . . f . . . . 1 f 1 f f 1 f 1 . 
+    . . f . . . . 1 1 1 f f 1 1 1 . 
+    f f f . . . . f f f 3 3 f f f . 
+    f f f . . . . f f f 3 3 f f f . 
+    f . . . . . . . f f 3 3 f f . . 
+    f f f f f f f 1 1 1 3 3 1 1 1 . 
+    f f f f f f f 1 1 1 3 3 1 1 1 . 
+    f f f f f f f 1 1 1 1 1 1 1 1 . 
+    f f . f f . f f 1 1 1 1 1 1 f . 
+    f f . f f . f f f f 1 1 f f f f 
+    `,img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . f . . . . . . f . 
+    . . . . . . . f f . . . . f f . 
+    . . . . . . . f f f f f f f f . 
+    . f f . . . . f f f f f f f f . 
+    . . f . . . . 1 f 1 f f 1 f 1 . 
+    . . f . . . . 1 1 1 f f 1 1 1 . 
+    f f f . . . . f f f 3 3 f f f . 
+    f f f . . . . f f f 3 3 f f f . 
+    f . . . . . . . f f 3 3 f f . . 
+    f f f f f f f 1 1 1 3 3 1 1 1 . 
+    f f f f f f f 1 1 1 3 3 1 1 1 . 
+    f f f f f f f 1 1 1 1 1 1 1 1 . 
+    f f . f f . f f 1 1 1 1 1 1 f . 
+    f f . f f . f f f f 1 1 f f f f 
+    `],
+50,
+true
+)
 mySprite.setPosition(75, 57)
 myEnemy.setPosition(82, 113)
 controller.moveSprite(mySprite, 100, 100)
