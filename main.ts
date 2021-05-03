@@ -1,3 +1,8 @@
+controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (myEnemy.isHittingTile(CollisionDirection.Left)) {
+        myEnemy.vy = -250
+    }
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     mySprite.destroy(effects.fire, 2000)
     myEnemy.say("YA LOOSE, SUCKER! IT'S DINNERTIME!", 5000)
@@ -372,7 +377,9 @@ myEnemy,
 50,
 true
 )
+myEnemy.ay = 500
 mySprite.setPosition(75, 57)
 myEnemy.setPosition(82, 113)
 controller.moveSprite(mySprite, 100, 100)
 myEnemy.follow(mySprite, 70)
+tiles.setTilemap(tilemap`level1`)
