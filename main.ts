@@ -528,8 +528,8 @@ function _2player () {
     myEnemy.ay = 500
     mySprite.setPosition(75, 57)
     myEnemy.setPosition(82, 113)
-    controller.moveSprite(mySprite, 100, 100)
-    controller.moveSprite(myEnemy, 50, 50)
+    controller.player1.moveSprite(mySprite, 100, 100)
+    controller.player2.moveSprite(myEnemy, 100, 100)
     myEnemy.follow(mySprite, 90)
     mySprite = sprites.create(img`
         ..............................
