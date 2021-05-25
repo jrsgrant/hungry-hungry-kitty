@@ -4,6 +4,10 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     _1player()
 })
+scene.onHitTile(SpriteKind.Player, 8, function (sprite) {
+    game.over(true, effects.confetti)
+    music.magicWand.play()
+})
 function _1player () {
     scene.setBackgroundImage(img`
         9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
